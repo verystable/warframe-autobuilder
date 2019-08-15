@@ -1,0 +1,59 @@
+name:                Warframe-AutoBuilder
+version:             0.1.50.25
+github:              "verystable/Warframe-AutoBuilder"
+license:             BSD3
+author:              "verystable"
+maintainer:          "verystable@protonmail.com"
+copyright:           "2019 verystable"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/verystable0/Warframe-AutoBuilder#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- classy-prelude
+- fuzzyset
+- optparse-applicative
+- aeson
+- lens
+- boxes
+- vector
+- directory
+
+# Test suite
+- hspec
+
+library:
+  source-dirs: src
+
+executables:
+  autobuilder:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Warframe-AutoBuilder
+
+tests:
+  autobuilder-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Warframe-AutoBuilder

@@ -1,0 +1,28 @@
+sudo: false
+language: generic
+
+env:
+  matrix:
+    - STACK_YAML=stack.yaml
+
+install:
+  # Stack installation
+  - mkdir -p ~/.local/bin
+  - travis_retry curl -sSL https://get.haskellstack.org/ | sh
+  - export PATH=~/.local/bin:$PATH
+  - stack --no-terminal --version
+
+script:
+  - stack setup --no-terminal
+  - stack update --no-terminal
+  - stack build -j2 --fast --no-terminal
+  - stack test --fast --no-terminal
+
+cache:
+  timeout: 2000
+  directories:
+  - $HOME/.cabal
+  - $HOME/.ghc
+  - $HOME/.stack
+  - .stack-work/
+  apt: true

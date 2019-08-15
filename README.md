@@ -30,7 +30,8 @@ A auto-builder for Warframe weapons!
   - [Parts Configuration](#parts-configuration)
   - [Final Configuration](#final-configuration)
   - [Application List](#application-list)
-  - [Testing](#testing)  
+  - [Testing](#testing)
+- [Adding a new Weapon](#adding-a-new-weapon)
 
   
 ## Installation
@@ -357,7 +358,7 @@ For example:
 
 ```
 
-# Source Directory Tree
+## Source Directory Tree
 
 ```
 src
@@ -466,7 +467,7 @@ src
 16 directories, 85 files	
 ``` 
 
-# Adding a Mod
+## Adding a Mod
 
 Adding a (new/custom/Riven) mod can be done in 5 steps.  
 1. [Location and identification](#location-and-identification)
@@ -480,7 +481,7 @@ We want to add a mod 'Rapid Fire'
 for `Rifles`  
 with stats `RapidFire [+60% Heat Damage, -90% Reload Time]`  
 
-## Location and identification
+### Location and identification
 
 1. Categorize the mod
    * This mod can be categorized as an 'elemental damage' mod or a 'reload speed' mod.  
@@ -498,7 +499,7 @@ with stats `RapidFire [+60% Heat Damage, -90% Reload Time]`
 	 Lets calls the first configuration `rapidFire1`  
 	 and the second configuration `rapidFire2`.  
 	 
-## Listing the configurations
+### Listing the configurations
 
 The mods backend file is `src/GenericFunctions/GenericFunctions.hs`.  
 
@@ -522,14 +523,14 @@ So we need 4 things.
    * The direction is either positive or negative.  
 	 If the modifier to the function is going to increase the stat, it'll be `+`, otherwise `-`.  
 	 
-## Understanding function arguments
+### Understanding function arguments
 
 No matter how the mod is going to work, it should always have two arguments  
 `baseWeapon (targetWeapon, mods)`  
 or  
 `baseWeapon targetWeapon`  
 
-## Parts configuration
+### Parts configuration
 
 Because `gdHeat` or just heat damage is a damage property of a weapon, we need `modifyDamageProperty` function from  
 `src/GenericFunctions/GenericFunctions`  
@@ -587,7 +588,7 @@ rapidFire2 baseWeapon targetWeapon =
 
 ```
 
-## Final configuration
+### Final configuration
 
 These are our two configuration.
 
@@ -661,7 +662,7 @@ so this part
 
 adds `"Rapidfire [+60% Heat Damage, +90% Reload Speed]"` to the list of mods.
 
-## Application List
+### Application List
 
 Now that we've made and configured our mod, it's time to add it to the application list!  
 An application list is a list of tuples of mod's name and the matching mod function.  
@@ -680,7 +681,7 @@ In the `Elemental Damage Mods` section, write at the bottom
 
 The line `("rapidFire", rapidFire wep)` basically means a mod name "rapidFire" applies function `rapidFire` on a weapon `wep`.  
 
-## Testing
+### Testing
 
 We're done! All we need to do now is test the mod out.  
 For our modifications to take effect, we'll need to rebuild and reinstall.  
@@ -697,3 +698,18 @@ And the mod should be available to build with!
 	, ..."
 	
 ```
+
+## Adding a New Weapon
+
+To add a new weapon simply go to `.config/warframe-autobuilder-data/<weapon-category>`,  
+copy any weapon file and paste it as the weapon name.
+
+For example say we want to add a new weapon `NewRifle`.
+
+We'll copy `Amprex` from `.config/warframe-autobuilder-data/Primary_Weapons/Amprex`  
+and paste it as `NewRifle` as `.config/warframe-autobuilder-data/Primary_Weapons/NewRifle`  
+
+Each of those weapon files are encoded in `json` so  
+you can open those files in any text editor and put in the `NewRifle` stats.  
+
+Finally add `NewRifle` to `RifleWeapons.hs` in `src/ArgInterface/RifleWeapons.hs`  

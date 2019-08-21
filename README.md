@@ -1,8 +1,8 @@
 # Warframe-AutoBuilder
 
-[![Pipeline Status](https://travis-ci.com/verystable/Warframe-AutoBuilder.svg?token=pmqXihG9sf1qNyvsBz8s&branch=master)](https://travis-ci.org/verystable/Warframe-AutoBuilder)
+[![Pipeline Status](https://travis-ci.org/verystable/warframe-autobuilder.svg?branch=master)](https://travis-ci.org/verystable/warframe-autobuilder)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Version](https://img.shields.io/badge/Version-0.1.50.25-blue.svg)](https://github.com/verystable/Warframe-AutoBuilder/tags)
+[![Version](https://img.shields.io/badge/Version-0.1.50.25-blue.svg)](https://github.com/verystable/warframe-autobuilder/tags)
 
 A auto-builder for Warframe weapons!
   
@@ -76,8 +76,8 @@ If you haven't installed `ghc` or any Haskell related library or project the fir
 Also `stack` can be very verbose.  
 But don't worry the subsequent builds and runs will be much faster!  
 
-If you want to see how the install process would look like, check out the CI/CD pipeline terminal.
-[![pipeline status](https://github.com/verystable/Warframe-AutoBuilder/badges/master/pipeline.svg)](https://github.com/verystable/Warframe-AutoBuilder/pipelines)
+If you want to see how the install process would look like, check out the CI/CD terminal.
+[![pipeline status](https://travis-ci.org/verystable/warframe-autobuilder.svg?branch=master)](https://travis-ci.org/verystable/warframe-autobuilder)
 
 ## Few things to remember
 

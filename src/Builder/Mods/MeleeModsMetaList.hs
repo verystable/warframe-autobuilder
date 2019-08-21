@@ -33,6 +33,7 @@ import           Builder.Mods.MeleeMods.ElementalDamageMods
 import           Builder.Mods.MeleeMods.MagazineMods
 import           Builder.Mods.MeleeMods.MultishotMods
 import           Builder.Mods.MeleeMods.PhysicalDamageMods
+import           Builder.Mods.MeleeMods.RivenMods
 import           Builder.Mods.MeleeMods.SpecialMods
 import           Builder.Mods.MeleeMods.StatusMods
 
@@ -48,8 +49,9 @@ meleeModsMetaList wep multiplier =
       , ("primedPressurePoint", primedPressurePoint wep)
       , ("sacrificialPressure", sacrificialPressure wep)
       , ("spoiledStrike"      , spoiledStrike wep)
-      , ( "conditionOverload"
-        , conditionOverload wep
+      , ("conditionOverload"  , conditionOverload wep)
+      , ( "meleeExampleRiven"
+        , meleeExampleRiven wep
         )
 
     -- Attack Speed Mods

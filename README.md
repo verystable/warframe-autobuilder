@@ -2,7 +2,7 @@
 
 [![Pipeline Status](https://travis-ci.com/verystable/Warframe-AutoBuilder.svg?token=pmqXihG9sf1qNyvsBz8s&branch=master)](https://travis-ci.org/verystable/Warframe-AutoBuilder)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Version](https://img.shields.io/badge/Version-0.1.50.25-blue.svg)](https://github.com/verystable0/Warframe-AutoBuilder/tags)
+[![Version](https://img.shields.io/badge/Version-0.1.50.25-blue.svg)](https://github.com/verystable/Warframe-AutoBuilder/tags)
 
 A auto-builder for Warframe weapons!
   
@@ -38,7 +38,7 @@ A auto-builder for Warframe weapons!
 
 ### Cloning The Repository
 
-If you know your way around git, skip to step 3.
+If you know your way around git, skip to next section.
 
 1. Install `git` 
    * You can use your distro's package manager
@@ -77,7 +77,7 @@ Also `stack` can be very verbose.
 But don't worry the subsequent builds and runs will be much faster!  
 
 If you want to see how the install process would look like, check out the CI/CD pipeline terminal.
-[![pipeline status](https://github.com/verystable0/Warframe-AutoBuilder/badges/master/pipeline.svg)](https://github.com/verystable0/Warframe-AutoBuilder/pipelines)
+[![pipeline status](https://github.com/verystable/Warframe-AutoBuilder/badges/master/pipeline.svg)](https://github.com/verystable/Warframe-AutoBuilder/pipelines)
 
 ## Few things to remember
 
@@ -113,7 +113,7 @@ This path may be unique to your machine so try it out yourself.
 The builder loosely is based upon the idea of ['Expected value'](https://en.wikipedia.org/wiki/Expected_value).
 So stats like total damage, proc dps, etc. may not look exactly like in the arsenal UI.
 
-Because every weapon has 'damage', [GenericDamage](https://github.com/verystable0/Warframe-AutoBuilder/blob/master/src/Types/GenericWeapon.hs) is made an instance of MonoFunctor.
+Because every weapon has 'damage', [GenericDamage](https://github.com/verystable/Warframe-AutoBuilder/blob/master/src/Types/GenericWeapon.hs) is made an instance of MonoFunctor.
 
 ### As a typical builder
 
@@ -701,15 +701,12 @@ And the mod should be available to build with!
 
 ## Adding a New Weapon
 
-To add a new weapon simply go to `.config/warframe-autobuilder-data/<weapon-category>`,  
-copy any weapon file and paste it as the weapon name.
+To add a new weapon simply go to `.config/warframe-autobuilder-data/<weapon-category>`, copy any weapon file and paste it as the weapon name.
 
 For example say we want to add a new weapon `NewRifle`.
 
-We'll copy `Amprex` from `.config/warframe-autobuilder-data/Primary_Weapons/Amprex`  
-and paste it as `NewRifle` as `.config/warframe-autobuilder-data/Primary_Weapons/NewRifle`  
+We'll copy `Amprex` from `.config/warframe-autobuilder-data/Primary_Weapons/Amprex` and paste it as `NewRifle` as `.config/warframe-autobuilder-data/Primary_Weapons/NewRifle`  
 
-Each of those weapon files are encoded in `json` so  
-you can open those files in any text editor and put in the `NewRifle` stats.  
+Each of those weapon files are encoded in `json` so you can open those files in any text editor and put in the `NewRifle` stats.  
 
 Finally add `NewRifle` to `RifleWeapons.hs` in `src/ArgInterface/RifleWeapons.hs`  

@@ -33,6 +33,7 @@ import           Builder.Mods.ShotgunMods.FireRateMods
 import           Builder.Mods.ShotgunMods.MagazineMods
 import           Builder.Mods.ShotgunMods.MultishotMods
 import           Builder.Mods.ShotgunMods.PhysicalDamageMods
+import           Builder.Mods.ShotgunMods.RivenMods
 import           Builder.Mods.ShotgunMods.SpecialMods
 import           Builder.Mods.ShotgunMods.StatusMods
 
@@ -59,10 +60,11 @@ shotgunModsMetaList wep = V.fromList
     )
 
     -- Critical Chance Mods
-  , ("blunderbuss", blunderbuss wep)
-  , ("laserSight" , laserSight wep)
-  , ( "criticalDeceleration"
-    , criticalDeceleration wep
+  , ("blunderbuss"         , blunderbuss wep)
+  , ("laserSight"          , laserSight wep)
+  , ("criticalDeceleration", criticalDeceleration wep)
+  , ( "shotgunExampleRiven"
+    , shotgunExampleRiven wep
     )
 
     -- Critical Multiplier Mods

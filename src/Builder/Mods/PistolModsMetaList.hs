@@ -31,6 +31,7 @@ import           Builder.Mods.PistolMods.ElementalDamageMods
 import           Builder.Mods.PistolMods.FireRateMods
 import           Builder.Mods.PistolMods.MagazineMods
 import           Builder.Mods.PistolMods.MultishotMods
+import           Builder.Mods.PistolMods.RivenMods
 import           Builder.Mods.PistolMods.PhysicalDamageMods
 import           Builder.Mods.PistolMods.SpecialMods
 import           Builder.Mods.PistolMods.StatusMods
@@ -70,8 +71,9 @@ pistolModsMetaList wep = V.fromList
   -- Critical Multiplier Mods
   , ("primedTargetCracker", primedTargetCracker wep)
   , ("targetCracker"      , targetCracker wep)
-  , ( "sharpenedBullets"
-    , sharpenedBullets wep
+  , ("sharpenedBullets"   , sharpenedBullets wep)
+  , ( "pistolExampleRiven"
+    , pistolExampleRiven wep
     )
 
   -- Fire Rate Mods

@@ -34,6 +34,7 @@ import           Builder.Mods.RifleMods.FireRateMods
 import           Builder.Mods.RifleMods.MagazineMods
 import           Builder.Mods.RifleMods.MultishotMods
 import           Builder.Mods.RifleMods.PhysicalDamageMods
+import           Builder.Mods.RifleMods.RivenMods
 import           Builder.Mods.RifleMods.SpecialMods
 import           Builder.Mods.RifleMods.StatusMods
 
@@ -56,10 +57,11 @@ rifleModsMetaList wep = V.fromList
     )
 
   -- Critical Chance Mods
-  , ("pointStrike", pointStrike wep)
-  , ("argonScope" , argonScope wep)
-  , ( "criticalDelay"
-    , criticalDelay wep
+  , ("pointStrike"  , pointStrike wep)
+  , ("argonScope"   , argonScope wep)
+  , ("criticalDelay", criticalDelay wep)
+  , ( "rifleExampleRiven"
+    , rifleExampleRiven wep
     )
 
   -- Critical Multiplier Mods

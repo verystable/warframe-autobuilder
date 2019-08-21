@@ -167,4 +167,5 @@ listOfAvailableMelees =
   , "Wolf_Sledge"
   , "Zenistar"
   , "Plague_Kripath+Shtung+Ekwana_Jai_II"
+  , "Landslide"
   ]

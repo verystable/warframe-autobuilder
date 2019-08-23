@@ -13,7 +13,7 @@
 module ComprehensiveWeapon.ModMultiplierFunctions.HeatModMultiplier where
 
 import           ClassyPrelude
-import           Types.ComprehensiveWeapon
+import           Types.GeneralTypes
 
 heatModMultiplierRifles :: Mods -> Maybe Float
 heatModMultiplierRifles mods

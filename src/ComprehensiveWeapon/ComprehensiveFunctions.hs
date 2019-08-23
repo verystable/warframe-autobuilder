@@ -7,8 +7,8 @@
 -- Stability   :  stable
 --
 -- This module contains the function 'makeComprehensive' which takes a build type
--- i.e. (GenericWeapon, Mods) and turns that into a 'ComprehensiveWeapon' type.
--- ComprehensiveWeapon contains in addition to whatever the preceding '(GenericWeapon, Mods)'
+-- i.e. Build and turns that into a 'ComprehensiveWeapon' type.
+-- ComprehensiveWeapon contains in addition to whatever the preceding 'Build'
 -- burstDPS
 -- sustainedDPS
 -- adjustedTotalDamage
@@ -29,9 +29,10 @@ import           Control.Lens
 import           Data.List                      ( nub )
 import           GenericFunctions.GenericFunctions
 import           Types.ComprehensiveWeapon
+import           Types.GeneralTypes
 import           Types.GenericWeapon
 
-makeComprehensive :: Maybe Float -> (GenericWeapon, Mods) -> ComprehensiveWeapon
+makeComprehensive :: Maybe Float -> Build -> ComprehensiveWeapon
 makeComprehensive multiplier (gw, mods) = ComprehensiveWeapon
   { _build                = build'
   , _burstDPS             = burstDPS'
@@ -131,31 +132,30 @@ makeComprehensive multiplier (gw, mods) = ComprehensiveWeapon
     (+) <$> saMagnetic (gw', mods) <*> getProcChanceElemental gdMagnetic gw'
 
   averageProcDamageImpact =
-    (*) <$> procChanceImpact <*> (getImpactProcDamage (gw', mods))
+    (*) <$> procChanceImpact <*> getImpactProcDamage (gw', mods)
   averageProcDamagePuncture =
-    (*) <$> procChancePuncture <*> (getPunctureProcDamage (gw', mods))
+    (*) <$> procChancePuncture <*> getPunctureProcDamage (gw', mods)
   averageProcDamageSlash =
-    (*) <$> procChanceSlash <*> (getSlashProcDamage (gw', mods))
+    (*) <$> procChanceSlash <*> getSlashProcDamage (gw', mods)
   averageProcDamageHeat =
-    (*) <$> procChanceHeat <*> (getHeatProcDamage (gw', mods))
+    (*) <$> procChanceHeat <*> getHeatProcDamage (gw', mods)
   averageProcDamageCold =
-    (*) <$> procChanceCold <*> (getColdProcDamage (gw', mods))
+    (*) <$> procChanceCold <*> getColdProcDamage (gw', mods)
   averageProcDamageToxin =
-    (*) <$> procChanceToxin <*> (getToxinProcDamage (gw', mods))
+    (*) <$> procChanceToxin <*> getToxinProcDamage (gw', mods)
   averageProcDamageElectricity =
-    (*) <$> procChanceElectricity <*> (getElectricityProcDamage (gw', mods))
+    (*) <$> procChanceElectricity <*> getElectricityProcDamage (gw', mods)
   averageProcDamageBlast =
-    (*) <$> procChanceBlast <*> (getBlastProcDamage (gw', mods))
-  averageProcDamageGas =
-    (*) <$> procChanceGas <*> (getGasProcDamage (gw', mods))
+    (*) <$> procChanceBlast <*> getBlastProcDamage (gw', mods)
+  averageProcDamageGas = (*) <$> procChanceGas <*> getGasProcDamage (gw', mods)
   averageProcDamageRadiation =
-    (*) <$> procChanceRadiation <*> (getRadiationProcDamage (gw', mods))
+    (*) <$> procChanceRadiation <*> getRadiationProcDamage (gw', mods)
   averageProcDamageViral =
-    (*) <$> procChanceViral <*> (getViralProcDamage (gw', mods))
+    (*) <$> procChanceViral <*> getViralProcDamage (gw', mods)
   averageProcDamageCorrosive =
-    (*) <$> procChanceCorrosive <*> (getCorrosiveProcDamage (gw', mods))
+    (*) <$> procChanceCorrosive <*> getCorrosiveProcDamage (gw', mods)
   averageProcDamageMagnetic =
-    (*) <$> procChanceMagnetic <*> (getMagneticProcDamage (gw', mods))
+    (*) <$> procChanceMagnetic <*> getMagneticProcDamage (gw', mods)
 
   procDPSImpact   = (*) <$> (gw' ^. gwFireRate) <*> averageProcDamageImpact
   procDPSPuncture = (*) <$> (gw' ^. gwFireRate) <*> averageProcDamagePuncture

@@ -23,11 +23,11 @@ import           Control.Lens
 
 import           GenericFunctions.GenericFunctions
 
-import           Types.ComprehensiveWeapon
+import           Types.GeneralTypes
 import           Types.GenericWeapon
 
 getInnateProcDamage
-  :: (GenericWeapon, Mods)
+  :: Build
   -> Lens' GenericDamage (Maybe Float)
   -> Maybe Float
   -> Maybe Float
@@ -36,22 +36,22 @@ getInnateProcDamage (gw, _) property modMultiplier
   | getGenericDamageProperty gw property > Just 0 = Just 1
   | otherwise              = Just 0
 
-getImpactProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getImpactProcDamage :: Build -> Maybe Float
 getImpactProcDamage (gw, mods) = Nothing
 {-# INLINE getImpactProcDamage #-}
 
-getPunctureProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getPunctureProcDamage :: Build -> Maybe Float
 getPunctureProcDamage (gw, mods) = Nothing
 {-# INLINE getPunctureProcDamage #-}
 
 -- | Slash Proc Damage
 --   35% of Weapon's base damage over 7 ticks / 6 secs
-getSlashProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getSlashProcDamage :: Build -> Maybe Float
 getSlashProcDamage (gw, mods) =
   (*) <$> Just 7 <*> ((*) <$> Just 0.35 <*> gw ^. gwBaseDamage)
 {-# INLINE getSlashProcDamage #-}
 
-getHeatProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getHeatProcDamage :: Build -> Maybe Float
 getHeatProcDamage (gw, mods) =
   (*)
     <$> Just 7
@@ -67,11 +67,11 @@ getHeatProcDamage (gw, mods) =
         )
 {-# INLINE getHeatProcDamage #-}
 
-getColdProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getColdProcDamage :: Build -> Maybe Float
 getColdProcDamage (gw, mods) = Nothing
 {-# INLINE getColdProcDamage #-}
 
-getToxinProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getToxinProcDamage :: Build -> Maybe Float
 getToxinProcDamage (gw, mods) =
   (*)
     <$> Just 9
@@ -87,7 +87,7 @@ getToxinProcDamage (gw, mods) =
         )
 {-# INLINE getToxinProcDamage #-}
 
-getElectricityProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getElectricityProcDamage :: Build -> Maybe Float
 getElectricityProcDamage (gw, mods) =
   (*)
     <$> gw
@@ -100,11 +100,11 @@ getElectricityProcDamage (gw, mods) =
         )
 {-# INLINE getElectricityProcDamage #-}
 
-getBlastProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getBlastProcDamage :: Build -> Maybe Float
 getBlastProcDamage (gw, mods) = Nothing
 {-# INLINE getBlastProcDamage #-}
 
-getGasProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getGasProcDamage :: Build -> Maybe Float
 getGasProcDamage (gw, mods) =
   (+)
     <$> (   (*)
@@ -135,18 +135,18 @@ getGasProcDamage (gw, mods) =
         )
 {-# INLINE getGasProcDamage #-}
 
-getRadiationProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getRadiationProcDamage :: Build -> Maybe Float
 getRadiationProcDamage (gw, mods) = Nothing
 {-# INLINE getRadiationProcDamage #-}
 
-getViralProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getViralProcDamage :: Build -> Maybe Float
 getViralProcDamage (gw, mods) = Nothing
 {-# INLINE getViralProcDamage #-}
 
-getCorrosiveProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getCorrosiveProcDamage :: Build -> Maybe Float
 getCorrosiveProcDamage (gw, mods) = Nothing
 {-# INLINE getCorrosiveProcDamage #-}
 
-getMagneticProcDamage :: (GenericWeapon, Mods) -> Maybe Float
+getMagneticProcDamage :: Build -> Maybe Float
 getMagneticProcDamage (gw, mods) = Nothing
 {-# INLINE getMagneticProcDamage #-}

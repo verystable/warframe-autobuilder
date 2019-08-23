@@ -14,7 +14,7 @@ module ComprehensiveWeapon.ModMultiplierFunctions.ElectricityModMultiplier
 where
 
 import           ClassyPrelude
-import           Types.ComprehensiveWeapon
+import           Types.GeneralTypes
 
 electricityModMultiplierRifles :: Mods -> Maybe Float
 electricityModMultiplierRifles mods

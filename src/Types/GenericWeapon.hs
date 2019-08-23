@@ -18,7 +18,6 @@ import           Control.Lens                   ( makeLenses )
 import           Data.Aeson                     ( FromJSON
                                                 , ToJSON
                                                 , defaultOptions
-                                                , eitherDecodeFileStrict
                                                 , genericToEncoding
                                                 , parseJSON
                                                 , toEncoding

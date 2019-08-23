@@ -13,7 +13,7 @@
 module ComprehensiveWeapon.ModMultiplierFunctions.ToxinModMultiplier where
 
 import           ClassyPrelude
-import           Types.ComprehensiveWeapon
+import           Types.GeneralTypes
 
 toxinModMultiplierRifles :: Mods -> Maybe Float
 toxinModMultiplierRifles mods

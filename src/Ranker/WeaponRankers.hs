@@ -19,6 +19,7 @@ import           ClassyPrelude
 
 import           Types.ComprehensiveWeapon
 import           Types.GenericWeapon
+import           Types.GeneralTypes
 
 import           Ranker.Ranker
 
@@ -69,7 +70,7 @@ rifleRanker' neededMods' unneededMods' weaponName' multiplier' comparator' = do
     ++ unpack weaponName'
 
   -- Converts weapon file into a Build type
-  let target = (, []) <$> wep' :: Either String (GenericWeapon, Mods)
+  let target = (, []) <$> wep' :: Either String Build
 
   -- Lambda function to apply over functor of GenericWeapon
       finalBuild =
@@ -112,7 +113,7 @@ shotgunRanker' neededMods' unneededMods' weaponName' multiplier' comparator' =
       ++ unpack weaponName'
 
     -- Converts weapon file into a Build type
-    let target = (, []) <$> wep' :: Either String (GenericWeapon, Mods)
+    let target = (, []) <$> wep' :: Either String Build
 
     -- Lambda function to apply over functor of GenericWeapon
         finalBuild =
@@ -156,7 +157,7 @@ meleeRanker' neededMods' unneededMods' weaponName' multiplier1' multiplier2' com
       ++ unpack weaponName'
 
     -- Converts weapon file into a Build type
-    let target = (, []) <$> wep' :: Either String (GenericWeapon, Mods)
+    let target = (, []) <$> wep' :: Either String Build
 
     -- Lambda function to apply over functor of GenericWeapon
         finalBuild =
@@ -199,7 +200,7 @@ pistolRanker' neededMods' unneededMods' weaponName' multiplier' comparator' =
       ++ unpack weaponName'
 
     -- Converts weapon file into a Build type
-    let target = (, []) <$> wep' :: Either String (GenericWeapon, Mods)
+    let target = (, []) <$> wep' :: Either String Build
 
     -- Lambda function to apply over functor of GenericWeapon
         finalBuild =

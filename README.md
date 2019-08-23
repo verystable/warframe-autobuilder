@@ -361,6 +361,7 @@ For example:
 ## Source Directory Tree
 
 ```
+
 src
 ├── ArgInterface
 │   ├── ArgInterface.hs
@@ -373,6 +374,7 @@ src
 │   ├── PistolWeapons.hs
 │   ├── RifleWeapons.hs
 │   ├── ShotgunWeapons.hs
+│   ├── WeaponDataDirectoryTest.hs
 │   └── WeaponDetailsIdentifier.hs
 ├── AutoBuilder.hs
 ├── Builder
@@ -393,6 +395,7 @@ src
 │       │   ├── MagazineMods.hs
 │       │   ├── MultishotMods.hs
 │       │   ├── PhysicalDamageMods.hs
+│       │   ├── RivenMods.hs
 │       │   ├── SpecialMods.hs
 │       │   └── StatusMods.hs
 │       ├── MeleeModsMetaList.hs
@@ -406,6 +409,7 @@ src
 │       │   ├── MagazineMods.hs
 │       │   ├── MultishotMods.hs
 │       │   ├── PhysicalDamageMods.hs
+│       │   ├── RivenMods.hs
 │       │   ├── SpecialMods.hs
 │       │   └── StatusMods.hs
 │       ├── PistolModsMetaList.hs
@@ -419,6 +423,7 @@ src
 │       │   ├── MagazineMods.hs
 │       │   ├── MultishotMods.hs
 │       │   ├── PhysicalDamageMods.hs
+│       │   ├── RivenMods.hs
 │       │   ├── SpecialMods.hs
 │       │   └── StatusMods.hs
 │       ├── RifleModsMetaList.hs
@@ -432,6 +437,7 @@ src
 │       │   ├── MagazineMods.hs
 │       │   ├── MultishotMods.hs
 │       │   ├── PhysicalDamageMods.hs
+│       │   ├── RivenMods.hs
 │       │   ├── SpecialMods.hs
 │       │   └── StatusMods.hs
 │       └── ShotgunModsMetaList.hs
@@ -462,9 +468,10 @@ src
 │   └── WeaponRankers.hs
 └── Types
     ├── ComprehensiveWeapon.hs
+    ├── GeneralTypes.hs
     └── GenericWeapon.hs
 
-16 directories, 85 files	
+16 directories, 91 files
 ``` 
 
 ## Adding a Mod
@@ -652,7 +659,7 @@ rapidFire1 baseWeapon $ rapidFire2 baseWeapon targetWeapon
 
 ```
 
-A mod has the type `(GenericWeapon, Mods)`
+A mod has the type `Build`
 
 so this part
 
@@ -710,3 +717,4 @@ We'll copy `Amprex` from `.config/warframe-autobuilder-data/Primary_Weapons/Ampr
 Each of those weapon files are encoded in `json` so you can open those files in any text editor and put in the `NewRifle` stats.  
 
 Finally add `NewRifle` to `RifleWeapons.hs` in `src/ArgInterface/RifleWeapons.hs`  
+

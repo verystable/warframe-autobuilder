@@ -12,6 +12,7 @@
 
 module Types.ComprehensiveWeapon where
 
+import           Types.GeneralTypes
 import           ClassyPrelude
 import           Control.Lens                   ( makeLenses )
 import           Data.Aeson                     ( FromJSON
@@ -24,8 +25,6 @@ import           Data.Aeson                     ( FromJSON
                                                 , (.:?)
                                                 )
 import           Types.GenericWeapon
-
-type Mods = [Text]
 
 -- | Generic ProcProcChance Record
 --   if the weapon doesn't have one of these fields, it's set to 'null' in the 'json' file
@@ -109,7 +108,7 @@ instance FromJSON GenericProcDPSs where
     <*> o .:? "_gpcCorrosive"
     <*> o .:? "_gpcMagnetic"
 
-data ComprehensiveWeapon = ComprehensiveWeapon { _build                :: (GenericWeapon, Mods)
+data ComprehensiveWeapon = ComprehensiveWeapon { _build                :: Build
                                                , _burstDPS             :: Maybe Float
                                                , _comboCounter         :: Maybe Float
                                                , _sustainedDPS         :: Maybe Float

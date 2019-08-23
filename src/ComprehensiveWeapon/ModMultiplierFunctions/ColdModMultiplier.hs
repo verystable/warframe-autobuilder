@@ -13,7 +13,7 @@
 module ComprehensiveWeapon.ModMultiplierFunctions.ColdModMultiplier where
 
 import           ClassyPrelude
-import           Types.ComprehensiveWeapon
+import           Types.GeneralTypes
 
 coldModMultiplierShotguns :: Mods -> Maybe Float
 coldModMultiplierShotguns mods

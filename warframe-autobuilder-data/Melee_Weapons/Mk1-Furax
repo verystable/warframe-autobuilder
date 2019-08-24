@@ -22,7 +22,21 @@
   "_gwType": "Misc",
   "_gwCategory": "Melee",
   "_gwAmmo": 0,
-  "_gwDamageTypes": 0,
+  "_gwDamageTypes": {
+    "_gdImpact": 21.0,
+    "_gdPuncture": 4.5,
+    "_gdSlash": 4.5,
+    "_gdHeat": 0,
+    "_gdCold": 0,
+    "_gdToxin": 0,
+    "_gdElectricity": 0,
+    "_gdBlast": 0,
+    "_gdGas": 0,
+    "_gdRadiation": 0,
+    "_gdViral": 0,
+    "_gdCorrosive": 0,
+    "_gdMagnetic": 0
+  },
   "_gwProcChances": 0,
   "_gwProcDamages": 0,
   "_gwDisposition": 0

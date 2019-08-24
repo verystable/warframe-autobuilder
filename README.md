@@ -1,5 +1,7 @@
 # Warframe-AutoBuilder
 
+![Warframe-AutoBuilder](images/warframeautobuilder.jpeg)
+
 [![Pipeline Status](https://travis-ci.org/verystable/warframe-autobuilder.svg?branch=master)](https://travis-ci.org/verystable/warframe-autobuilder)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Version](https://img.shields.io/badge/Version-0.1.50.25-blue.svg)](https://github.com/verystable/warframe-autobuilder/tags)

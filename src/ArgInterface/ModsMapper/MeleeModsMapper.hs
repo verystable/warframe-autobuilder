@@ -1,3 +1,4 @@
+
 {-# LANGUAGE NoImplicitPrelude #-}
 
 -- |
@@ -19,18 +20,23 @@ import           Builder.Mods.MeleeModsMetaList
 
 import           Types.GenericWeapon
 
+-- | A generic best-matcher.
+--   Matches a given mod name to corrected mod's name.
 bestMatch :: Text -> Maybe Text
-bestMatch stuff = map snd $ headMay $ F.get modSet stuff
+bestMatch mod' = map snd $ headMay $ F.get modSet mod'
 {-# INLINE bestMatch #-}
 
+-- | A Melee mods name list.
 modList :: [Text]
 modList = toList $ fst <$> meleeModsMetaList dummyGenericWeapon Nothing
 {-# INLINE modList #-}
 
+-- | Melee Mods list.
 modSet :: FuzzySet
 modSet = F.fromList modList
 {-# INLINE modSet #-}
 
+-- | Maps mod name to mod index.
 modNameMapper' :: Text -> Int
 modNameMapper' modName = fromMaybe 0 matchingElement
  where
@@ -38,6 +44,7 @@ modNameMapper' modName = fromMaybe 0 matchingElement
   matchingElement =
     snd <$> find (\(name, _) -> bestMatch modName == Just name) precedenceList
 
+-- | Maps list of mod names to their indices.
 modNameMapper :: [Text] -> [Int]
 modNameMapper = map modNameMapper'
 {-# INLINE modNameMapper #-}

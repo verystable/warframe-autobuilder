@@ -27,20 +27,35 @@ import           Data.Aeson                     ( FromJSON
 
 -- | Generic Damage Record
 --   if the weapon doesn't have one of these fields, it's set to 'null' in the 'json' file
-data GenericDamage = GenericDamage { _gdImpact      :: Maybe Float
-                                   , _gdPuncture    :: Maybe Float
-                                   , _gdSlash       :: Maybe Float
-                                   , _gdHeat        :: Maybe Float
-                                   , _gdCold        :: Maybe Float
-                                   , _gdToxin       :: Maybe Float
-                                   , _gdElectricity :: Maybe Float
-                                   , _gdBlast       :: Maybe Float
-                                   , _gdGas         :: Maybe Float
-                                   , _gdRadiation   :: Maybe Float
-                                   , _gdViral       :: Maybe Float
-                                   , _gdCorrosive   :: Maybe Float
-                                   , _gdMagnetic    :: Maybe Float
-                                   } deriving (Show, Generic, Eq, Ord)
+data GenericDamage = GenericDamage
+  {
+    -- | Represents Impact damage of a weapon
+    _gdImpact      :: Maybe Float
+    -- | Represents Puncture damage of a weapon    
+  , _gdPuncture    :: Maybe Float
+    -- | Represents Slash damage of a weapon
+  , _gdSlash       :: Maybe Float
+    -- | Represents Heat damage of a weapon
+  , _gdHeat        :: Maybe Float
+    -- | Represents Cold damage of a weapon
+  , _gdCold        :: Maybe Float
+    -- | Represents Toxin damage of a weapon
+  , _gdToxin       :: Maybe Float
+    -- | Represents Electricity damage of a weapon
+  , _gdElectricity :: Maybe Float
+    -- | Represents Blast damage of a weapon
+  , _gdBlast       :: Maybe Float
+    -- | Represents Gas damage of a weapon
+  , _gdGas         :: Maybe Float
+    -- | Represents Radiation damage of a weapon
+  , _gdRadiation   :: Maybe Float
+    -- | Represents Viral damage of a weapon
+  , _gdViral       :: Maybe Float
+    -- | Represents Corrosive damage of a weapon
+  , _gdCorrosive   :: Maybe Float
+    -- | Represents Magnetic damage of a weapon
+  , _gdMagnetic    :: Maybe Float
+  } deriving (Show, Generic, Eq, Ord)
 
 makeLenses ''GenericDamage
 
@@ -101,32 +116,58 @@ instance MonoFunctor GenericDamage where
      (f bvMagnetic)
 
 -- | Generic Weapon Record
-data GenericWeapon = GenericWeapon { _gwName                 :: Maybe Text
-                                   , _gwMagazineSize         :: Maybe Float
-                                   , _gwReloadTime           :: Maybe Float
-                                   , _gwTotalDamage          :: Maybe Float
-                                   , _gwBaseDamage           :: Maybe Float
-                                   , _gwBaseMultishot        :: Maybe Float
-                                   , _gwMultishot            :: Maybe Float
-                                   , _gwPunchthrough         :: Maybe Float
-                                   , _gwAccuracy             :: Maybe Float
-                                   , _gwCriticalChance       :: Maybe Float
-                                   , _gwCriticalMultiplier   :: Maybe Float
-                                   , _gwStatusChance         :: Maybe Float
-                                   , _gwFireRate             :: Maybe Float
-                                   , _gwChargeAttack         :: Maybe Float
-                                   , _gwSpinAttack           :: Maybe Float
-                                   , _gwLeapAttack           :: Maybe Float
-                                   , _gwWallAttack           :: Maybe Float
-                                   , _gwChannelingMultiplier :: Maybe Float
-                                   , _gwChannelingCost       :: Maybe Float
-                                   , _gwOmegaAttenuation     :: Maybe Float
-                                   , _gwType                 :: Maybe Text
-                                   , _gwCategory             :: Maybe Text
-                                   , _gwAmmo                 :: Maybe Float
-                                   , _gwDamageTypes          :: Maybe GenericDamage
-                                   , _gwDisposition          :: Maybe Float
-                                   } deriving (Show, Generic, Eq, Ord)
+data GenericWeapon = GenericWeapon
+  { -- | Represents Name of a weapon
+    _gwName                 :: Maybe Text
+    -- | Represents MagazineSize of a weapon
+  , _gwMagazineSize         :: Maybe Float
+    -- | Represents ReloadTime of a weapon
+  , _gwReloadTime           :: Maybe Float
+    -- | Represents TotalDamage of a weapon
+  , _gwTotalDamage          :: Maybe Float
+    -- | Represents BaseDamage of a weapon
+  , _gwBaseDamage           :: Maybe Float
+    -- | Represents BaseMultishot of a weapon
+  , _gwBaseMultishot        :: Maybe Float
+    -- | Represents Multishot of a weapon
+  , _gwMultishot            :: Maybe Float
+    -- | Represents Punchthrough of a weapon
+  , _gwPunchthrough         :: Maybe Float
+    -- | Represents Accuracy of a weapon
+  , _gwAccuracy             :: Maybe Float
+    -- | Represents CriticalChance of a weapon
+  , _gwCriticalChance       :: Maybe Float
+    -- | Represents CriticalMultiplier of a weapon
+  , _gwCriticalMultiplier   :: Maybe Float
+    -- | Represents StatusChance of a weapon
+  , _gwStatusChance         :: Maybe Float
+    -- | Represents FireRate of a weapon
+  , _gwFireRate             :: Maybe Float
+    -- | Represents ChargeAttack of a weapon
+  , _gwChargeAttack         :: Maybe Float
+    -- | Represents SpinAttack of a weapon
+  , _gwSpinAttack           :: Maybe Float
+    -- | Represents LeapAttack of a weapon
+  , _gwLeapAttack           :: Maybe Float
+    -- | Represents WallAttack of a weapon
+  , _gwWallAttack           :: Maybe Float
+    -- | Represents ChannelingMultiplier of a weapon
+  , _gwChannelingMultiplier :: Maybe Float
+    -- | Represents ChannelingCost of a weapon
+  , _gwChannelingCost       :: Maybe Float
+    -- | Represents OmegaAttenuation of a weapon
+  , _gwOmegaAttenuation     :: Maybe Float
+    -- | Represents Type of a weapon
+  , _gwType                 :: Maybe Text
+    -- | Represents Category of a weapon
+  , _gwCategory             :: Maybe Text
+    -- | Represents Ammo of a weapon
+  , _gwAmmo                 :: Maybe Float
+    -- | Represents all damage types of a weapon
+  , _gwDamageTypes          :: Maybe GenericDamage
+    -- | Represents Disposition of a weapon
+  , _gwDisposition          :: Maybe Float
+  } deriving (Show, Generic, Eq, Ord)
 
 makeLenses ''GenericWeapon
 

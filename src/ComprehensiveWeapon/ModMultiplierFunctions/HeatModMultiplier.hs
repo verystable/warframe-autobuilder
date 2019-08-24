@@ -15,6 +15,7 @@ module ComprehensiveWeapon.ModMultiplierFunctions.HeatModMultiplier where
 import           ClassyPrelude
 import           Types.GeneralTypes
 
+-- | Finds the electricity multiplier of a rifle build
 heatModMultiplierRifles :: Mods -> Maybe Float
 heatModMultiplierRifles mods
   | "Primed Hellfire [+165% Heat Damage]"
@@ -67,6 +68,7 @@ heatModMultiplierRifles mods
   | otherwise
   = Nothing
 
+-- | Finds the electricity multiplier of a shotgun build
 heatModMultiplierShotguns :: Mods -> Maybe Float
 heatModMultiplierShotguns mods
   | "Primed Incendiary Coat [+165% Heat Damage]"
@@ -119,6 +121,7 @@ heatModMultiplierShotguns mods
   | otherwise
   = Nothing
 
+-- | Finds the electricity multiplier of a pistol build
 heatModMultiplierPistols :: Mods -> Maybe Float
 heatModMultiplierPistols mods
   | "Primed Heated Charge [+165% Heat Damage]"
@@ -140,6 +143,7 @@ heatModMultiplierPistols mods
   | otherwise
   = Nothing
 
+-- | Finds the electricity multiplier of a melee build
 heatModMultiplierMelees :: Mods -> Maybe Float
 heatModMultiplierMelees mods
   | "Primed Molten Impact [+165% Heat Damage]"
@@ -161,6 +165,7 @@ heatModMultiplierMelees mods
   | otherwise
   = Nothing
 
+-- | Finds the electricity multiplier of a general build
 heatModMultiplier :: Mods -> Maybe Float
 heatModMultiplier mods =
   heatModMultiplierRifles mods

@@ -16,6 +16,7 @@ where
 import           ClassyPrelude
 import           Types.GeneralTypes
 
+-- | Finds the electricity multiplier of a rifle build
 electricityModMultiplierRifles :: Mods -> Maybe Float
 electricityModMultiplierRifles mods
   | "Primed Stormbringer [+165% Electricity Damage]"
@@ -37,6 +38,7 @@ electricityModMultiplierRifles mods
   | otherwise
   = Nothing
 
+-- | Finds the electricity multiplier of a shotgun build
 electricityModMultiplierShotguns :: Mods -> Maybe Float
 electricityModMultiplierShotguns mods
   | "Primed Charged Shell [+165% Electricity Damage]"
@@ -58,6 +60,7 @@ electricityModMultiplierShotguns mods
   | otherwise
   = Nothing
 
+-- | Finds the electricity multiplier of a pistol build
 electricityModMultiplierPistols :: Mods -> Maybe Float
 electricityModMultiplierPistols mods
   | "Primed Convulsion [+165% Electricity Damage]"
@@ -79,6 +82,7 @@ electricityModMultiplierPistols mods
   | otherwise
   = Nothing
 
+-- | Finds the electricity multiplier of a melee build
 electricityModMultiplierMelees :: Mods -> Maybe Float
 electricityModMultiplierMelees mods
   | "Primed Shocking Touch [+165% Electricity Damage]"
@@ -132,6 +136,7 @@ electricityModMultiplierMelees mods
   | otherwise
   = Nothing
 
+-- | Finds the electricity multiplier of a general build
 electricityModMultiplier :: Mods -> Maybe Float
 electricityModMultiplier mods =
   electricityModMultiplierRifles mods

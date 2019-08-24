@@ -36,8 +36,7 @@ import           Builder.Mods.MeleeMods.PhysicalDamageMods
 import           Builder.Mods.MeleeMods.RivenMods
 import           Builder.Mods.MeleeMods.SpecialMods
 import           Builder.Mods.MeleeMods.StatusMods
-
-type Build = (GenericWeapon, [Text])
+import           Types.GeneralTypes
 
 meleeModsMetaList
   :: GenericWeapon -> Maybe Float -> V.Vector (Text, Build -> Build)

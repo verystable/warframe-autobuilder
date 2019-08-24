@@ -15,6 +15,7 @@ module ComprehensiveWeapon.ModMultiplierFunctions.ToxinModMultiplier where
 import           ClassyPrelude
 import           Types.GeneralTypes
 
+-- | Finds the toxin multiplier of a rifle build
 toxinModMultiplierRifles :: Mods -> Maybe Float
 toxinModMultiplierRifles mods
   | "Primed Infected Clip [+165% Toxin Damage]"
@@ -36,6 +37,7 @@ toxinModMultiplierRifles mods
   | otherwise
   = Nothing
 
+-- | Finds the toxin multiplier of a shotgun build
 toxinModMultiplierShotguns :: Mods -> Maybe Float
 toxinModMultiplierShotguns mods
   | "Primed Contagious Spread [+165% Toxin Damage]"
@@ -57,6 +59,7 @@ toxinModMultiplierShotguns mods
   | otherwise
   = Nothing
 
+-- | Finds the toxin multiplier of a pistol build
 toxinModMultiplierPistols :: Mods -> Maybe Float
 toxinModMultiplierPistols mods
   | "Primed Pathogen Rounds [+165% Toxin Damage]"
@@ -78,6 +81,7 @@ toxinModMultiplierPistols mods
   | otherwise
   = Nothing
 
+-- | Finds the toxin multiplier of a melee build
 toxinModMultiplierMelees :: Mods -> Maybe Float
 toxinModMultiplierMelees mods
   | "Primed Fever Strike [+165% Toxin Damage]"
@@ -130,6 +134,7 @@ toxinModMultiplierMelees mods
   | otherwise
   = Nothing
 
+-- | Finds the toxin multiplier of a general build
 toxinModMultiplier :: Mods -> Maybe Float
 toxinModMultiplier mods =
   toxinModMultiplierRifles mods

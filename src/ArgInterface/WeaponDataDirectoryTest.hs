@@ -16,6 +16,7 @@ where
 import           ClassyPrelude
 import           System.Directory
 
+-- | Error message that'll pop up if autobuilder couldn't find data files.
 missingDirectoryMessage :: IO ()
 missingDirectoryMessage = do
   putStrLn "Please copy directory"
@@ -24,6 +25,7 @@ missingDirectoryMessage = do
   putStrLn "'.config/warframe-autobuilder-data'"
   putStrLn "---------------------------------------------------"
 
+-- | Checks weather data files directory exists.
 checkIfDirectoryExists :: IO ()
 checkIfDirectoryExists = do
   homeDir <- getHomeDirectory

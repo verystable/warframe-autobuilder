@@ -15,6 +15,7 @@ module ComprehensiveWeapon.ModMultiplierFunctions.ColdModMultiplier where
 import           ClassyPrelude
 import           Types.GeneralTypes
 
+-- | Finds the cold multiplier of a shotgun build
 coldModMultiplierShotguns :: Mods -> Maybe Float
 coldModMultiplierShotguns mods
   | "Primed Chilling Grasp [+165% Cold Damage]"
@@ -67,6 +68,7 @@ coldModMultiplierShotguns mods
   | otherwise
   = Nothing
 
+-- | Finds the cold multiplier of a rifle build
 coldModMultiplierRifles :: Mods -> Maybe Float
 coldModMultiplierRifles mods
   | "Primed Cryo Rounds [+165% Cold Damage]"
@@ -88,6 +90,7 @@ coldModMultiplierRifles mods
   | otherwise
   = Nothing
 
+-- | Finds the cold multiplier of a pistol build
 coldModMultiplierPistols :: Mods -> Maybe Float
 coldModMultiplierPistols mods
   | "Primed Deep Freeze [+165% Cold Damage]"
@@ -140,7 +143,7 @@ coldModMultiplierPistols mods
   | otherwise
   = Nothing
 
-
+-- | Finds the cold multiplier of a melee build
 coldModMultiplierMelees :: Mods -> Maybe Float
 coldModMultiplierMelees mods
   | "Primed North Wind [+165% Cold Damage]"
@@ -162,6 +165,7 @@ coldModMultiplierMelees mods
   | otherwise
   = Nothing
 
+-- | Finds the cold multiplier of a general build
 coldModMultiplier :: Mods -> Maybe Float
 coldModMultiplier mods =
   coldModMultiplierRifles mods

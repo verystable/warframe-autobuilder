@@ -15,6 +15,7 @@ import           ClassyPrelude
 import qualified Data.Vector                   as V
 
 import           Types.GenericWeapon
+import           Types.GeneralTypes
 
 import           Builder.Mods.MeleeModsMetaList
 

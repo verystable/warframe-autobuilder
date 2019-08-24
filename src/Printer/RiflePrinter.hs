@@ -18,9 +18,11 @@ import           Text.PrettyPrint.Boxes
 import           Types.ComprehensiveWeapon
 import           Types.GenericWeapon
 
+-- | Makes floating points numbers pretty printable. 
 formatFloatN :: RealFloat a => a -> String
 formatFloatN floatNum = showFFloat (Just 2) floatNum ""
 
+-- | Makes a property pretty printable. 
 showProperty
   :: RealFloat a
   => GenericWeapon
@@ -36,6 +38,7 @@ showProperty gw property =
     &  _Just
     %~ view property
 
+-- | Makes a ComprehensiveRifle pretty printable. 
 printComprehensiveRifle :: ComprehensiveWeapon -> Box
 printComprehensiveRifle cw = vcat
   left

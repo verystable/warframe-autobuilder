@@ -12,5 +12,11 @@ module Types.GeneralTypes where
 import           ClassyPrelude
 import           Types.GenericWeapon            ( GenericWeapon )
 
-type Mods = [Text]
+-- | Mod is a Text Type representing a Warframe mod.
+type Mod = Text
+
+-- | Mods is list of Mod.
+type Mods = [Mod]
+
+-- | A build is a combination of a weapon and all the mods applied on that weapon.
 type Build = (GenericWeapon, Mods)

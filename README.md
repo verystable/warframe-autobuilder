@@ -328,6 +328,12 @@ autobuilder
 
 ![Soma Prime built for Corrosive Proc Chance](images/SomaPrimeCorrosiveProcChance.jpeg)
 
+#### Caution
+
+Autobuilding given a comparator compares every possible build.  
+So if there are 51 mods and you only put one mod in `-b`'s argument, that'll mean autobuilder will have to compare `50 choose 8` different builds.  
+That's a total of `53,68,78,650` builds.  
+So if you don't want your PC to turn into an impromptu room heater, I'll recommend giving autobuilder 3 or more mods to work with.  
 
 ## Comparators
 

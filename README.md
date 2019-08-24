@@ -21,6 +21,7 @@ A auto-builder for Warframe weapons!
   	- [Example command with Condition Overload](#example-command-with-condition-overload)	
   - [As an auto-builder](#as-an-auto-builder)
 	- [Command for auto-building](#command-for-auto-building)
+  - [Caution](#caution)
   - [Comparators](#comparators)	
 - [Source Directory Tree](#source-directory-tree)
 - [Adding a Mod](#adding-a-mod)
@@ -328,7 +329,7 @@ autobuilder
 
 ![Soma Prime built for Corrosive Proc Chance](images/SomaPrimeCorrosiveProcChance.jpeg)
 
-#### Caution
+## Caution
 
 Autobuilding given a comparator compares every possible build.  
 So if there are 51 mods and you only put one mod in `-b`'s argument, that'll mean autobuilder will have to compare `50 choose 8` different builds.  

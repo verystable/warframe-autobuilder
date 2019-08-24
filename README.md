@@ -1,5 +1,3 @@
-# Warframe-AutoBuilder
-
 ![Warframe-AutoBuilder](images/warframeautobuilder.jpeg)
 
 [![Pipeline Status](https://travis-ci.org/verystable/warframe-autobuilder.svg?branch=master)](https://travis-ci.org/verystable/warframe-autobuilder)

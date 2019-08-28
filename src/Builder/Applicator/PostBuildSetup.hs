@@ -185,7 +185,7 @@ setGenericWeaponDamageMultishotModified
   :: (GenericWeapon, [Text]) -> (GenericWeapon, [Text])
 setGenericWeaponDamageMultishotModified (gw, mods) =
   ( applyMultiplier
-    (gw ^. gwMultishot)
+    ((/) <$> (gw ^. gwMultishot) <*> (gw ^. gwBaseMultishot))
     (gw & gwBaseDamage %~ (\b -> (*) <$> b <*> (gw ^. gwMultishot)))
   , mods
   )

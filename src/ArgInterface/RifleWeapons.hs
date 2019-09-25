@@ -17,7 +17,8 @@ import           ClassyPrelude
 --   if a weapon is added to the 'warframe-autobuilder-data/Primary_Weapons' folder.
 listOfAvailableRifles :: [Text]
 listOfAvailableRifles =
-  [ "Amprex"
+  [ "Acceltra"
+  , "Amprex"
   , "Argonak"
   , "Attica"
   , "Battacor"
